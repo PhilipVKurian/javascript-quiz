@@ -10,7 +10,7 @@ var backBtn = document.getElementById('back');
 var interval;
 
 var left = 0;
-var timeleft = 30;
+var timeleft = 200;
 var score = 0;
 
 scores.style.visibility = 'hidden';
@@ -34,7 +34,7 @@ startButton.addEventListener('click', function startTimer(){
 
 resetBtn.addEventListener('click', function resetScores(){
     var displayedHS = document.getElementById("display-highscore");
-    displayedHS.innerHTML = "";
+    displayedHS.style.visibility = "hidden";
     localStorage.clear();
 });
 
@@ -51,12 +51,12 @@ function getAnswer(q){
     var option4 = document.createElement('BUTTON');
 
     if (questionNum == 1){
-        h1.innerHTML ="What be JavaScript";
+        h1.innerHTML ="What is JavaScript?";
         question.appendChild(h1);
-        option1.innerHTML = "French";
+        option1.innerHTML = "A subset of Java";
         option2.innerHTML = "math";
         option3.innerHTML = "a coding language";
-        option4.innerHTML = "HUH";
+        option4.innerHTML = "Language the egyptians spoke";
         answer.appendChild(option1);
         answer.appendChild(option2);
         answer.appendChild(option3);
@@ -81,10 +81,10 @@ function getAnswer(q){
     } 
     if (questionNum == 2){
         clearFields();
-        h1.innerHTML ="What be a function";
+        h1.innerHTML ="What is a function?";
         question.appendChild(h1);
         console.log(question);
-        option1.innerHTML = "Frensach";
+        option1.innerHTML = "A complicated Task";
         option2.innerHTML = "math";
         option3.innerHTML = "a set of statements that performs a task or calculates a value";
         option4.innerHTML = "You never taught me this!";
@@ -111,7 +111,7 @@ function getAnswer(q){
     }
     if (questionNum == 3){
         clearFields();
-        h1.innerHTML = "what is a variable";
+        h1.innerHTML = "What is a variable?";
         question.appendChild(h1);
         console.log(question);
         option1.innerHTML = "something that changes";
@@ -171,7 +171,7 @@ function getAnswer(q){
     }
     if (questionNum == 5){
         clearFields();
-        h1.innerHTML ="Did you find this quiz hard";
+        h1.innerHTML ="Did you find this quiz hard?";
         question.appendChild(h1);
         option1.innerHTML = "No";
         option2.innerHTML = "Yes";
@@ -219,7 +219,7 @@ function submitQuiz(){
 
     submitButton.addEventListener('click', function (event){
         event.preventDefault();
-        name = document.querySelector('#userName').value;
+        name = document.querySelector('#user-name').value;
         var listItem = [name, score];
 
         if(window.localStorage.length == 0){
@@ -227,43 +227,31 @@ function submitQuiz(){
             scoreList.push( JSON.parse(localStorage.getItem("listItem", listItem))); 
         } else {            
             scoreList.push( JSON.parse(localStorage.getItem("listItem", listItem))); 
-            scoreList.push(listItem);           
-            console.log(scoreList + "   list where error after secibd oys");
+            scoreList.push(listItem); 
             localStorage.setItem("listItem", JSON.stringify(scoreList));
         }
         displayScores(scoreList);
 
     });
-
-
 };
 
 function displayScores(sl){
     scores.style.visibility = 'hidden'; 
     document.querySelector('#highscores').style.visibility = 'visible';
     var highscore = document.getElementById('display-highscore');
-    console.log(sl + "  in display");
     var displayedHS = document.getElementById("display-highscore");
     var storedScores = JSON.stringify(sl);
     var splitScores = storedScores.toString().replace(/[\[\]'"]+/g, "").split(",");
-    console.log(splitScores.length);
-
 
     for (var i =0; i < splitScores.length; i++){      
         var p1 = document.createElement("p");
         if(i%2 == 0){
-            console.log(splitScores[i] + " is the name");
-            p1.textContent += splitScores[i];
+            p1.textContent += "Name:  " + splitScores[i];
 
         } else {
-            console.log(splitScores[i] + " is a score");
-            p1.textContent += splitScores[i]
+            p1.textContent += "Score:  " + splitScores[i]
         }
         displayedHS.appendChild(p1);
     }
-
-
-
-
-}
+};
 

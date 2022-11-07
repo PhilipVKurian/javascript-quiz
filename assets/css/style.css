@@ -1,0 +1,98 @@
+body{
+    background-image: url("https://wallpaperaccess.com/full/2489634.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: larger;
+    color: white;
+}
+
+main{
+    display: flex;
+    align-items: center;
+    justify-content: center;    
+}
+
+#start-game{
+    margin-top: 20%;
+    margin-left: 20%;
+    width: fit-content;
+    height: fit-content;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: larger;
+}
+#timer{
+    margin-right: 40px;
+}
+#start-game{
+    width: 200px;
+    height: 50px;
+    border: 10px;
+    border-radius: 10px;
+    border: solid;
+    border-color: white;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: larger;
+    font-weight: bolder;
+    color: white;
+    background-color: green;
+}
+
+#quiz button{
+    display: flex;
+    width: 600px;
+    margin-bottom: 20px;
+    height: fit-content;
+    border: 10px;
+    border-radius: 10px;
+    border: solid;
+    border-color: white;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: larger;
+    color: white;
+    background-color: black;
+}
+
+#user-name{
+    margin-top: 200px;
+    border: 10px;
+    border-radius: 10px;
+    border: solid;
+    border-color: white;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: larger;
+}
+
+#submit{
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: larger;
+    font-weight: bolder;
+    color: white;
+    background-color: brown;
+}
+
+#highscores{
+    margin-right: 30%;
+}
+
+#display-highscore{
+    border: 10px;
+    border-radius: 10px;
+    border: solid;
+    border-color: white;
+}
+#reset {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: larger;
+    font-weight: bolder;
+    color: white;
+    background-color: brown;
+}
+#back{
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: larger;
+    font-weight: bolder;
+    color: white;
+    background-color: rgb(35, 24, 187);
+
+}
