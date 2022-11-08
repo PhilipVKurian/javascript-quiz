@@ -68,13 +68,17 @@ body{
     background-color: brown;
 }
 
-#highscores{
-    margin-right: 30%;
+form{
+    min-height: 800px;
+}
+
+#scores{
+    margin-left: 10%;
 }
 
 #display-highscore{
     border: 10px;
-    border-radius: 10px;
+    border-radius: 5px;
     border: solid;
     border-color: white;
 }

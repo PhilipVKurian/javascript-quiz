@@ -236,7 +236,7 @@ function submitQuiz(){
 };
 
 function displayScores(sl){
-    scores.style.visibility = 'hidden'; 
+    scores.style.display = 'none';
     document.querySelector('#highscores').style.visibility = 'visible';
     var highscore = document.getElementById('display-highscore');
     var displayedHS = document.getElementById("display-highscore");
