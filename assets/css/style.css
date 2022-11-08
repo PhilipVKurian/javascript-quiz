@@ -1,12 +1,14 @@
 body{
+
+    min-height: 100%;
+    min-width: 100%;
     background-image: url("https://wallpaperaccess.com/full/2489634.jpg");
     background-repeat: no-repeat;
     background-color: rgb(20, 20, 20);
     background-size: cover;
     font-family: 'Roboto Condensed', sans-serif;
     font-size: larger;
-    color: white;
-    margin-left: 300px;
+    color: white;    
 }
 
 #timer{
@@ -89,5 +91,4 @@ body{
     font-weight: bolder;
     color: white;
     background-color: rgb(35, 24, 187);
-
 }
