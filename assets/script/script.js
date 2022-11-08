@@ -10,7 +10,7 @@ var backBtn = document.getElementById('back');
 var interval;
 
 var left = 0;
-var timeleft = 200;
+var timeleft = 30;
 var score = 0;
 
 scores.style.visibility = 'hidden';
