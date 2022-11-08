@@ -16,6 +16,7 @@ var score = 0;
 scores.style.visibility = 'hidden';
 document.querySelector('#highscores').style.visibility = 'hidden';
 
+//Event Listener to start timer and display questions with the getAnswer (p)  where p is the question number the user is on
 startButton.addEventListener('click', function startTimer(){
     interval = setInterval( playGame, 1000);
     startButton.style.display = 'none';
@@ -31,17 +32,17 @@ startButton.addEventListener('click', function startTimer(){
         }    
     }   
 });
-
+//reset button to clear local storage
 resetBtn.addEventListener('click', function resetScores(){
     var displayedHS = document.getElementById("display-highscore");
     displayedHS.style.visibility = "hidden";
     localStorage.clear();
 });
-
+//allows user to go back and play again
 backBtn.addEventListener('click', function goBack(){
     window.location.reload();
 });
-
+//called when user starts the game
 function getAnswer(q){
     var questionNum = q;
     var h1 = document.createElement('h1');
@@ -204,7 +205,7 @@ function getAnswer(q){
         answer.innerHTML = "";  
     }
 };
-
+//submits the quiz when the user runs out of time or completes the final question
 function submitQuiz(){
     clearInterval(interval);
     var h1 = document.querySelector("h1");
@@ -216,7 +217,7 @@ function submitQuiz(){
     scores.style.visibility = 'visible'; 
     var scoreList = []; 
 
-
+    //Stores the score to local storage when the user submits the name
     submitButton.addEventListener('click', function (event){
         event.preventDefault();
         name = document.querySelector('#user-name').value;
@@ -234,7 +235,7 @@ function submitQuiz(){
 
     });
 };
-
+//hides the score page and displays the highscores that were rendered from local storage
 function displayScores(sl){
     scores.style.display = 'none';
     document.querySelector('#highscores').style.visibility = 'visible';
